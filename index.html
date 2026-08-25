@@ -147,38 +147,34 @@
     color: #ff6b1a;
   }
 
-  .social-buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 28px;
-  }
-
+  /* Кнопки правил на головному екрані */
   .home-rules {
     width: 100%;
-    max-width: 820px;
-    margin: 10px 0 10px;
+    max-width: 860px;
+    margin: 20px 0;
     background: rgba(20, 14, 10, 0.72);
     border: 2px solid rgba(255, 107, 26, 0.7);
-    border-radius: 24px;
-    padding: 24px 28px;
-    backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 28px 32px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   }
 
   .home-rules-title {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: clamp(20px, 4vw, 28px);
+    gap: 14px;
+    font-size: clamp(22px, 4vw, 30px);
     font-weight: 900;
     color: #ff6b1a;
-    letter-spacing: 1px;
-    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+    text-shadow: 0 0 15px rgba(255, 107, 26, 0.4);
   }
 
   .home-rules-title img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
   }
 
@@ -186,60 +182,83 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
   }
 
   .home-rules-list li {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: clamp(15px, 2.4vw, 18px);
-    line-height: 1.45;
-    color: #eee;
-    padding: 10px 12px;
-    border-radius: 12px;
+    align-items: center;
+    gap: 14px;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+    padding: 14px 22px;
+    background: rgba(20, 14, 10, 0.6);
+    border: 2px solid #ff6b1a;
+    border-radius: 16px;
     cursor: pointer;
-    transition: background 0.25s, transform 0.2s;
+    box-shadow: 0 0 12px rgba(255, 107, 26, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .home-rules-list li:hover {
-    background: rgba(255, 107, 26, 0.15);
-    transform: translateX(4px);
+    background: #ff6b1a;
+    color: #fff;
+    border-color: #ff6b1a;
+    transform: translateX(8px) scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 107, 26, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
   }
 
   .home-rules-num {
     color: #ff6b1a;
-    font-weight: 800;
-    min-width: 28px;
+    font-weight: 900;
+    font-size: 18px;
+    min-width: 32px;
     flex-shrink: 0;
+    transition: color 0.3s;
+  }
+
+  .home-rules-list li:hover .home-rules-num {
+    color: #fff;
+  }
+
+  /* Соціальні кнопки */
+  .social-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 32px;
   }
 
   .social-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    background: transparent;
-    border: 2px solid #ff6b1a;
+    gap: 14px;
+    background: rgba(20, 14, 10, 0.6);
+    border: 3px solid #ff6b1a;
     border-radius: 50px;
-    padding: 14px 28px;
+    padding: 16px 34px;
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    transition: all 0.3s;
+    box-shadow: 0 0 16px rgba(255, 107, 26, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .social-btn:hover {
     background: #ff6b1a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 107, 26, 0.4);
+    color: #fff;
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 28px rgba(255, 107, 26, 0.7), 0 10px 25px rgba(0, 0, 0, 0.5);
   }
 
   .social-btn-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
   }
 
@@ -299,18 +318,6 @@
     transform: scale(1.15);
   }
 
-  .pacman {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
   .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -331,44 +338,6 @@
 
   .hero-title .orange {
     color: #ff6b1a;
-  }
-
-  .telegram-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(20, 14, 10, 0.8);
-    border: 2px solid #ff6b1a;
-    border-radius: 50px;
-    padding: 18px 35px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: all 0.3s;
-    margin-top: 30px;
-  }
-
-  .telegram-btn:hover {
-    background: #ff6b1a;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 107, 26, 0.4);
-  }
-
-  .tg-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .tg-icon-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 
   .cookie-popup {
@@ -424,7 +393,6 @@
     display: none;
   }
 
-  /* Full screen & Fluid responsiveness across all devices */
   html, body {
     width: 100%;
     min-height: 100vh;
@@ -478,20 +446,16 @@
       min-width: 140px;
       max-width: 220px;
     }
-    .search-input,
-    .search-input:focus {
-      width: 100%;
-    }
     .container {
       padding: 24px 16px 50px;
     }
     .home-rules {
-      padding: 18px 16px;
-      border-radius: 18px;
+      padding: 20px 16px;
+      border-radius: 20px;
     }
     .modal-content {
       max-height: 90vh;
-      border-radius: 18px;
+      border-radius: 20px;
     }
     .modal-header {
       padding: 16px 18px;
@@ -501,7 +465,7 @@
       letter-spacing: 1px;
     }
     .modal-body {
-      padding: 16px;
+      padding: 18px 16px;
       gap: 14px;
     }
     .cookie-popup {
@@ -533,25 +497,20 @@
     .social-btn {
       width: 100%;
       justify-content: center;
-      padding: 12px 18px;
-      font-size: 15px;
+      padding: 14px 20px;
+      font-size: 16px;
     }
     .social-buttons-container {
       flex-direction: column;
       width: 100%;
     }
     .home-rules-list li {
-      padding: 8px 6px;
+      padding: 12px 14px;
+      font-size: 16px;
     }
     .side-drawer {
       width: min(320px, 88vw);
       left: -100%;
-    }
-  }
-
-  @media (min-width: 821px) {
-    .search-container {
-      flex-shrink: 0;
     }
   }
 
@@ -661,35 +620,32 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
   }
 
   .drawer-menu-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 107, 26, 0.4);
-    border-radius: 12px;
-    padding: 14px 16px;
+    background: rgba(20, 14, 10, 0.6);
+    border: 2px solid #ff6b1a;
+    border-radius: 14px;
+    padding: 16px 20px;
     color: #fff;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     cursor: pointer;
     text-align: left;
+    box-shadow: 0 0 12px rgba(255, 107, 26, 0.25);
     transition: all 0.3s;
   }
 
   .drawer-menu-item:hover {
     background: #ff6b1a;
     border-color: #ff6b1a;
-    transform: translateX(5px);
-    box-shadow: 0 4px 15px rgba(255, 107, 26, 0.4);
-  }
-
-  .item-icon {
-    font-size: 20px;
+    transform: translateX(6px);
+    box-shadow: 0 4px 20px rgba(255, 107, 26, 0.5);
   }
 
   .drawer-item-icon {
@@ -698,13 +654,7 @@
     object-fit: contain;
   }
 
-  .menu-feature-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  /* Modal Rules Window */
+  /* Modal Windows */
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -912,41 +862,6 @@
     color: rgba(255, 255, 255, 0.5);
   }
 
-  .faction-chip-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .faction-chip {
-    background: rgba(255, 107, 26, 0.08);
-    border: 2px solid rgba(255, 107, 26, 0.4);
-    border-radius: 50px;
-    padding: 9px 20px;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.25s;
-    white-space: nowrap;
-  }
-
-  .faction-chip:hover {
-    background: rgba(255, 107, 26, 0.2);
-    border-color: #ff6b1a;
-    transform: translateY(-2px);
-  }
-
-  .faction-chip.active {
-    background: #ff6b1a;
-    border-color: #ff6b1a;
-    color: #fff;
-    box-shadow: 0 6px 20px rgba(255, 107, 26, 0.45);
-  }
-
   .verification-results {
     display: flex;
     flex-direction: column;
@@ -955,9 +870,8 @@
 
   .verification-hint {
     text-align: center;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 14px;
-    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
     padding: 10px 0;
   }
 
@@ -965,7 +879,7 @@
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 107, 26, 0.3);
     border-radius: 16px;
-    padding: 18px 20px;
+    padding: 16px 20px;
     transition: all 0.3s;
   }
 
@@ -975,22 +889,22 @@
   }
 
   .player-nickname {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 800;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   .player-role {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .player-note {
     font-size: 13px;
     color: #ff6b1a;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-style: italic;
   }
 
@@ -1005,14 +919,13 @@
     color: #fff;
     font-weight: 700;
     font-size: 13px;
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 20px;
     letter-spacing: 1px;
   }
 
   .player-faction-badge.admin-badge {
     background: linear-gradient(135deg, #ff4500 0%, #ff6b1a 100%);
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
   }
 
   .player-faction-badge.court-badge {
@@ -1034,6 +947,154 @@
     padding: 20px 0;
   }
 
+  /* FACTIONS DIRECTORY (Інтерактивний список фракцій без пошуку) */
+  .factions-directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .faction-accordion-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 107, 26, 0.4);
+    border-radius: 18px;
+    padding: 18px 22px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .faction-accordion-item:hover {
+    border-color: #ff6b1a;
+    background: rgba(255, 107, 26, 0.08);
+    box-shadow: 0 4px 20px rgba(255, 107, 26, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .faction-accordion-item.active {
+    border-color: #ff6b1a;
+    background: rgba(20, 14, 10, 0.85);
+    box-shadow: 0 0 25px rgba(255, 107, 26, 0.45);
+  }
+
+  .faction-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .faction-item-title-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .faction-item-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .faction-arrow {
+    font-size: 14px;
+    color: #ff6b1a;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .faction-accordion-item.active .faction-arrow {
+    transform: rotate(180deg);
+  }
+
+  .faction-item-body {
+    display: none;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 107, 26, 0.3);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .faction-accordion-item.active .faction-item-body {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .faction-desc-box {
+    background: rgba(255, 107, 26, 0.08);
+    border-left: 3px solid #ff6b1a;
+    padding: 12px 16px;
+    border-radius: 0 10px 10px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #eee;
+    margin-bottom: 14px;
+  }
+
+  .faction-powers-box {
+    font-size: 14px;
+    color: #ff6b1a;
+    margin-bottom: 16px;
+  }
+
+  .faction-members-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff6b1a;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .members-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .member-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    flex-wrap: wrap;
+  }
+
+  .member-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff6b1a;
+    flex-shrink: 0;
+  }
+
+  .member-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+  }
+
+  .member-role {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+  }
+
+  .member-badge-green {
+    font-size: 12px;
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.15);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 6px;
+  }
 </style>
 </head>
 <body>
@@ -1087,8 +1148,8 @@
       ККЛ
     </button>
     <button class="drawer-menu-item" id="factionsBtn">
-      <img src="пошук_по_фракціям.png" alt="Пошук по фракціям" class="drawer-item-icon" />
-      Пошук по фракціям
+      <img src="пошук_по_фракціям.png" alt="Фракції" class="drawer-item-icon" />
+      Фракції та Організації
     </button>
   </div>
 </div>
@@ -1434,76 +1495,45 @@
     <div class="modal-body">
       <section class="rules-section">
         <h3>РОЗДІЛ I. ЗЛОЧИНИ ПРОТИ ВЛАСНОСТІ</h3>
-        <p><strong>Стаття 1.1.</strong> Незаконне заволодіння коштами з каси АЗС</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.2.</strong> Пограбування каси магазину</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.3.</strong> Крадіжка майна або коштів із торгового автомата</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.4.</strong> Незаконне проникнення до банківського сховища з метою пограбування</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.5.</strong> Пограбування вантажного контейнера</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.6.</strong> Незаконне заволодіння вмістом сейфа</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.7.</strong> Крадіжка майна з ювелірного магазину</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 1.8.</strong> Пограбування громадянина</p>
-        <p>Покарання: тюрма та повернення викраденого майна потерпілому.</p>
-        <p><em>Примітка: якщо під час пограбування використовувалася зброя, порушнику може бути додатково застосоване покарання за відповідною статтею цього Кодексу.</em></p>
+        <p><strong>Стаття 1.1.</strong> Незаконне заволодіння коштами з каси АЗС — тюрма.</p>
+        <p><strong>Стаття 1.2.</strong> Пограбування каси магазину — тюрма.</p>
+        <p><strong>Стаття 1.3.</strong> Крадіжка майна або коштів із торгового автомата — тюрма.</p>
+        <p><strong>Стаття 1.4.</strong> Незаконне проникнення до банківського сховища з метою пограбування — тюрма.</p>
+        <p><strong>Стаття 1.5.</strong> Пограбування вантажного контейнера — тюрма.</p>
+        <p><strong>Стаття 1.6.</strong> Незаконне заволодіння вмістом сейфа — тюрма.</p>
+        <p><strong>Стаття 1.7.</strong> Крадіжка майна з ювелірного магазину — тюрма.</p>
+        <p><strong>Стаття 1.8.</strong> Пограбування громадянина — тюрма та повернення викраденого майна.</p>
       </section>
 
       <section class="rules-section">
         <h3>РОЗДІЛ II. ЗЛОЧИНИ ПРОТИ ЖИТТЯ ТА ЗДОРОВ'Я</h3>
-        <p><strong>Стаття 2.1.</strong> Умисне позбавлення життя громадянина із застосуванням вогнепальної зброї</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.2.</strong> Умисне позбавлення життя працівника правоохоронного органу із застосуванням вогнепальної зброї</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.3.</strong> Умисне позбавлення життя громадянина із застосуванням холодної зброї</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.4.</strong> Умисне позбавлення життя працівника правоохоронного органу із застосуванням холодної зброї</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.5.</strong> Умисне позбавлення життя без використання зброї</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.6.</strong> Умисне позбавлення життя працівника правоохоронного органу без використання зброї</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.7.</strong> Збройний напад на громадянина</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.8.</strong> Збройний напад на працівника правоохоронного органу</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 2.9.</strong> Фізичний напад на громадянина без застосування зброї</p>
-        <p>Покарання: штраф від 1000€ до 3000€ або тюрма.</p>
-        <p><strong>Стаття 2.10.</strong> Фізичний напад на працівника правоохоронного органу без застосування зброї</p>
-        <p>Покарання: штраф від 2000€ до 5000€ або тюрма.</p>
+        <p><strong>Стаття 2.1.</strong> Умисне позбавлення життя громадянина (вогнепальна зброя) — тюрма.</p>
+        <p><strong>Стаття 2.2.</strong> Умисне позбавлення життя правоохоронця (вогнепальна зброя) — тюрма.</p>
+        <p><strong>Стаття 2.3.</strong> Умисне позбавлення життя громадянина (холодна зброя) — тюрма.</p>
+        <p><strong>Стаття 2.4.</strong> Умисне позбавлення життя правоохоронця (холодна зброя) — тюрма.</p>
+        <p><strong>Стаття 2.5.</strong> Умисне позбавлення життя без зброї — тюрма.</p>
+        <p><strong>Стаття 2.6.</strong> Умисне позбавлення життя правоохоронця без зброї — тюрма.</p>
+        <p><strong>Стаття 2.7.</strong> Збройний напад на громадянина — тюрма.</p>
+        <p><strong>Стаття 2.8.</strong> Збройний напад на правоохоронця — тюрма.</p>
+        <p><strong>Стаття 2.9.</strong> Фізичний напад на громадянина без зброї — штраф 1000€–3000€ або тюрма.</p>
+        <p><strong>Стаття 2.10.</strong> Фізичний напад на правоохоронця без зброї — штраф 2000€–5000€ або тюрма.</p>
       </section>
 
       <section class="rules-section">
         <h3>РОЗДІЛ III. ЗЛОЧИНИ ПРОТИ МАЙНА</h3>
-        <p><strong>Стаття 3.1.</strong> Завдання шкоди транспортному засобу внаслідок ДТП</p>
-        <p>Покарання: компенсація потерпілому від 1000€ до 3000€.</p>
-        <p><strong>Стаття 3.2.</strong> Умисне пошкодження приватного майна</p>
-        <p>До приватного майна належать будинки, території, транспортні засоби та інше майно громадян.</p>
-        <p>Покарання: штраф від 1000€ до 4000€ або тюрма.</p>
-        <p><strong>Стаття 3.3.</strong> Пошкодження державного майна</p>
-        <p>До державного майна належать дорожні знаки, огорожі, об'єкти інфраструктури та інше державне майно.</p>
-        <p>Покарання: штраф від 1000€ до 4000€.</p>
-        <p><strong>Стаття 3.4.</strong> Умисне знищення майна</p>
-        <p>Покарання: компенсація завданих збитків та тюрма.</p>
+        <p><strong>Стаття 3.1.</strong> Завдання шкоди ТЗ внаслідок ДТП — компенсація 1000€–3000€.</p>
+        <p><strong>Стаття 3.2.</strong> Умисне пошкодження приватного майна — штраф 1000€–4000€ або тюрма.</p>
+        <p><strong>Стаття 3.3.</strong> Пошкодження державного майна — штраф 1000€–4000€.</p>
+        <p><strong>Стаття 3.4.</strong> Умисне знищення майна — компенсація збитків та тюрма.</p>
       </section>
 
       <section class="rules-section">
         <h3>РОЗДІЛ IV. ЗЛОЧИНИ ПРОТИ ПРАВОПОРЯДКУ</h3>
-        <p><strong>Стаття 4.1.</strong> Спроба уникнути затримання</p>
-        <p>Втеча від працівника правоохоронного органу після законної вимоги зупинитися.</p>
-        <p>Покарання: штраф від 1000€ до 3000€ або тюрма.</p>
-        <p><strong>Стаття 4.2.</strong> Втеча від правоохоронних органів із використанням транспортного засобу</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 4.3.</strong> Ігнорування законних вимог працівника правоохоронного органу</p>
-        <p>Покарання: штраф від 1000€ до 3000€ або тюрма.</p>
-        <p><strong>Стаття 4.4.</strong> Опір працівнику правоохоронного органу</p>
-        <p>Покарання: тюрма.</p>
-        <p><strong>Стаття 4.5.</strong> Використання відмичок</p>
-        <p>Покарання: штраф від 1500€ до 3000€ або тюрма.</p>
+        <p><strong>Стаття 4.1.</strong> Спроба уникнути затримання — штраф 1000€–3000€ або тюрма.</p>
+        <p><strong>Стаття 4.2.</strong> Втеча на транспортному засобі — тюрма.</p>
+        <p><strong>Стаття 4.3.</strong> Ігнорування законних вимог правоохоронця — штраф 1000€–3000€ або тюрма.</p>
+        <p><strong>Стаття 4.4.</strong> Опір працівнику правоохоронного органу — тюрма.</p>
+        <p><strong>Стаття 4.5.</strong> Використання відмичок — штраф 1500€–3000€ або тюрма.</p>
       </section>
 
       <section class="rules-section">
@@ -1520,7 +1550,7 @@
 <div class="modal-overlay" id="verificationModal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2>ПЕРЕВІРКА</h2>
+      <h2>ПЕРЕВІРКА ГРАВЦІВ</h2>
       <button class="modal-close-btn" id="verificationModalCloseBtn">&times;</button>
     </div>
     <div class="modal-body">
@@ -1530,36 +1560,25 @@
       </div>
 
       <div class="verification-results" id="verificationResults">
-        <p class="verification-hint">Введіть нік гравця для пошуку</p>
+        <p class="verification-hint">Введіть нік гравця для швидкої перевірки</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal Window for Faction Search / Directory -->
+<!-- Modal Window for Factions & Organizations (Інтерактивний список фракцій без пошуку) -->
 <div class="modal-overlay" id="factionsModal">
   <div class="modal-content">
     <div class="modal-header">
-      <h2>ПОШУК ПО ФРАКЦІЯМ</h2>
+      <h2>ФРАКЦІЇ ТА ОРГАНІЗАЦІЇ</h2>
       <button class="modal-close-btn" id="factionsModalCloseBtn">&times;</button>
     </div>
     <div class="modal-body">
-      <div class="modal-search-wrapper">
-        <img src="{48D7BABB-A509-4DF6-A882-C6183B75021A}.png" alt="Пошук" class="modal-search-icon" />
-        <input type="text" id="factionDirectorySearchInput" placeholder="Введіть нік гравця в Roblox..." class="modal-search-input" />
-      </div>
-      <div class="faction-chip-group" id="factionChipGroup">
-        <button type="button" class="faction-chip active" data-faction="">Усі фракції</button>
-        <button type="button" class="faction-chip" data-faction="НПЛ">НПЛ</button>
-        <button type="button" class="faction-chip" data-faction="СБЛ">СБЛ</button>
-        <button type="button" class="faction-chip" data-faction="LNG">LNG</button>
-        <button type="button" class="faction-chip" data-faction="ВВБ">ВВБ</button>
-        <button type="button" class="faction-chip" data-faction="Суд">Суд</button>
-        <button type="button" class="faction-chip" data-faction="Мерія">Мерія</button>
-        <button type="button" class="faction-chip" data-faction="Адміністрація">Адміністрація</button>
-      </div>
+      <p style="color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 8px;">
+        Натисніть на будь-яку фракцію, щоб переглянути її опис, повноваження та склад:
+      </p>
 
-      <div class="verification-results" id="factionDirectoryResults"></div>
+      <div class="factions-directory-list" id="factionsDirectoryList"></div>
     </div>
   </div>
 </div>
@@ -1676,6 +1695,7 @@
   const verificationBtn = document.getElementById('verificationBtn');
   const verificationModal = document.getElementById('verificationModal');
   const verificationModalCloseBtn = document.getElementById('verificationModalCloseBtn');
+
   function openVerificationModal() {
     closeDrawer();
     verificationModal.classList.add('active');
@@ -1693,7 +1713,7 @@
     });
   }
 
-  // Faction Search / Directory Modal Toggle Logic
+  // Factions Modal Toggle Logic
   const factionsBtn = document.getElementById('factionsBtn');
   const factionsModal = document.getElementById('factionsModal');
   const factionsModalCloseBtn = document.getElementById('factionsModalCloseBtn');
@@ -1701,10 +1721,7 @@
   function openFactionsModal() {
     closeDrawer();
     if (factionsModal) factionsModal.classList.add('active');
-    const nickInput = document.getElementById('factionDirectorySearchInput');
-    if (nickInput) nickInput.value = '';
-    setActiveFactionChip('');
-    renderFactionDirectory('', '');
+    renderFactionsDirectory();
   }
 
   function closeFactionsModal() {
@@ -1776,8 +1793,11 @@
     });
   });
 
-  // Verification Data
+  // Verification & Members Data
   const verificationData = [
+    { nickname: 'MarkizaJu', factions: ['НПЛ'], image: 'npl_MarkizaJu.jpg' },
+    { nickname: 'jdjdudhshshdb', factions: ['НПЛ', 'СБС', 'СБЛ'], role: 'Працівник СБС', image: 'npl_jdjdudhshshdb.jpg' },
+    { nickname: 'roxbennis12', factions: ['НПЛ', 'Адміністрація'], image: 'npl_roxbennis12.jpg' },
     { nickname: 'foksy070', factions: ['НПЛ'] },
     { nickname: 'Tinala29', factions: ['НПЛ'] },
     { nickname: 'Eugen_I3', factions: ['НПЛ'], note: 'Най активніший гравець сервера' },
@@ -1786,13 +1806,10 @@
     { nickname: 'vip-teg5', factions: ['НПЛ'] },
     { nickname: 'dragon_not08', factions: ['НПЛ'] },
     { nickname: 'Danfas4', factions: ['НПЛ', 'Адміністрація'] },
-    { nickname: 'MarkizaJu', factions: ['НПЛ'] },
     { nickname: 'SIGMA2019827', factions: ['Адміністрація'], note: 'Най активніший гравець сервера' },
-    { nickname: 'roxbennis12', factions: ['Адміністрація'] },
     { nickname: 'makxuitaem', factions: ['Суд'], role: 'Заступник Головного Судді' },
     { nickname: 'Asda7771jog', factions: ['Суд'], role: 'Охоронець суду', note: 'Ліцензія: активна' },
-    { nickname: 'plecak_plecak1234', factions: ['СБЛ'], role: 'Працівник СБЛ' },
-    { nickname: 'jdjdudhshshdb', factions: ['СБС'], role: 'Працівник СБС' }
+    { nickname: 'plecak_plecak1234', factions: ['СБЛ'], role: 'Працівник СБЛ' }
   ];
 
   function getFactionBadgeClass(faction) {
@@ -1806,7 +1823,7 @@
     return '';
   }
 
-  // Faction Directory Data
+  // Factions Directory Data
   const factionsDirectory = [
     {
       key: 'НПЛ',
@@ -1835,8 +1852,8 @@
     {
       key: 'Суд',
       name: 'Суд LEGACY RP',
-      description: 'Судова гілка влади сервера, розглядає справи затриманих та порушників, виносить рішення відповідно до законодавства LEGACY RP.',
-      powers: ''
+      description: 'Судова гілка влади сервера, розглядає справи затриманих та порушників, виносить вироки відповідно до законодавства LEGACY RP.',
+      powers: 'Кримінальний кодекс Легасі (ККЛ)'
     },
     {
       key: 'Мерія',
@@ -1848,7 +1865,7 @@
       key: 'Адміністрація',
       name: 'Адміністрація сервера',
       description: 'Слідкує за дотриманням правил сервера, розглядає порушення, застосовує покарання (попередження, депорт, бан) відповідно до правил Legacy RP.',
-      powers: ''
+      powers: 'Регламент та правила адміністрації'
     }
   ];
 
@@ -1856,117 +1873,66 @@
     return verificationData.filter(p => p.factions.includes(key));
   }
 
-  function renderFactionMemberCard(p) {
-    let extra = '';
-    if (p.role) extra += `<div class="player-role">${p.role}</div>`;
-    if (p.note) extra += `<div class="player-note">${p.note}</div>`;
-    return `
-      <div class="player-card">
-        <div class="player-nickname">${p.nickname}</div>
-        ${extra}
-      </div>
-    `;
-  }
-
-  function renderFactionInfoCard(f) {
-    const members = getFactionMembers(f.key);
-    const membersHtml = members.length
-      ? members.map(renderFactionMemberCard).join('')
-      : '<p class="verification-hint">Немає підтверджених гравців</p>';
-
-    return `
-      <div class="player-card">
-        <div class="player-nickname">
-          <span class="player-faction-badge ${getFactionBadgeClass(f.key)}">${f.key}</span>
-          ${f.name}
-        </div>
-        <p>${f.description}</p>
-        ${f.powers ? `<p><strong>${f.powers}</strong></p>` : ''}
-        <div class="player-factions">${membersHtml}</div>
-      </div>
-    `;
-  }
-
-  function renderFactionDirectory(nickQuery, factionKey) {
-    const container = document.getElementById('factionDirectoryResults');
+  // Render Interactive Factions Directory (Акордеон без пошуку)
+  function renderFactionsDirectory() {
+    const container = document.getElementById('factionsDirectoryList');
     if (!container) return;
 
-    const nick = (nickQuery || '').toLowerCase().trim();
-    const selectedFaction = factionKey || '';
+    container.innerHTML = factionsDirectory.map((f, index) => {
+      const members = getFactionMembers(f.key);
+      const membersHtml = members.length
+        ? members.map(p => {
+            const avatarHtml = p.image 
+              ? `<img src="${p.image}" class="member-avatar" onerror="this.style.display='none'" />` 
+              : '';
+            const roleHtml = p.role ? `<div class="member-role">${p.role}</div>` : '';
+            const noteHtml = p.note ? `<span class="member-badge-green">${p.note}</span>` : '';
+            return `
+              <div class="member-row">
+                ${avatarHtml}
+                <div>
+                  <span class="member-name">${p.nickname}</span>
+                  ${noteHtml}
+                  ${roleHtml}
+                </div>
+              </div>
+            `;
+          }).join('')
+        : '<p class="faction-empty-text" style="color: rgba(255,255,255,0.4); font-style: italic; padding: 6px 0;">Список учасників оновлюється...</p>';
 
-    // No nickname entered
-    if (nick === '') {
-      if (!selectedFaction) {
-        container.innerHTML = '<p class="verification-hint">Оберіть фракцію, щоб переглянути інформацію про неї, або введіть нік гравця</p>';
-        return;
-      }
-
-      const faction = factionsDirectory.find(f => f.key === selectedFaction);
-      if (!faction) {
-        container.innerHTML = '<p class="no-results">Фракцію не знайдено</p>';
-        return;
-      }
-
-      container.innerHTML = renderFactionInfoCard(faction);
-      return;
-    }
-
-    // Nickname entered — search across all players (including those from "Перевірка"), scoped by faction if chosen
-    let matches = verificationData.filter(p => p.nickname.toLowerCase().includes(nick));
-    if (selectedFaction) {
-      matches = matches.filter(p => p.factions.includes(selectedFaction));
-    }
-
-    if (matches.length === 0) {
-      container.innerHTML = '<p class="no-results">Гравця не знайдено</p>';
-      return;
-    }
-
-    container.innerHTML = matches.map(p => {
-      const shownFactions = selectedFaction ? [selectedFaction] : p.factions;
-      const badges = shownFactions.map(f =>
-        `<span class="player-faction-badge ${getFactionBadgeClass(f)}">${f}</span>`
-      ).join('');
-
-      let extra = '';
-      if (p.role) extra += `<div class="player-role">${p.role}</div>`;
-      if (p.note) extra += `<div class="player-note">${p.note}</div>`;
+      const isDefaultActive = index === 0 ? 'active' : '';
 
       return `
-        <div class="player-card">
-          <div class="player-nickname">${p.nickname}</div>
-          ${extra}
-          <div class="player-factions">${badges}</div>
+        <div class="faction-accordion-item ${isDefaultActive}" onclick="toggleFactionAccordion(this)">
+          <div class="faction-item-header">
+            <div class="faction-item-title-box">
+              <span class="player-faction-badge ${getFactionBadgeClass(f.key)}">${f.key}</span>
+              <span class="faction-item-title">${f.name}</span>
+            </div>
+            <span class="faction-arrow">▼</span>
+          </div>
+          <div class="faction-item-body">
+            <div class="faction-desc-box">
+              <strong>Опис:</strong> ${f.description}
+            </div>
+            ${f.powers ? `<div class="faction-powers-box"><strong>Повноваження:</strong> ${f.powers}</div>` : ''}
+            <div class="faction-members-heading">Склад організації:</div>
+            <div class="members-grid">${membersHtml}</div>
+          </div>
         </div>
       `;
     }).join('');
   }
 
-  let currentFactionKey = '';
-
-  function setActiveFactionChip(key) {
-    currentFactionKey = key;
-    document.querySelectorAll('.faction-chip').forEach(chip => {
-      chip.classList.toggle('active', chip.dataset.faction === key);
-    });
+  function toggleFactionAccordion(item) {
+    const isCurrentlyActive = item.classList.contains('active');
+    document.querySelectorAll('.faction-accordion-item').forEach(el => el.classList.remove('active'));
+    if (!isCurrentlyActive) {
+      item.classList.add('active');
+    }
   }
 
-  const factionDirectorySearchInput = document.getElementById('factionDirectorySearchInput');
-
-  function updateFactionDirectory() {
-    const nick = factionDirectorySearchInput ? factionDirectorySearchInput.value : '';
-    renderFactionDirectory(nick, currentFactionKey);
-  }
-
-  if (factionDirectorySearchInput) factionDirectorySearchInput.addEventListener('input', updateFactionDirectory);
-
-  document.querySelectorAll('.faction-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      setActiveFactionChip(chip.dataset.faction);
-      updateFactionDirectory();
-    });
-  });
-
+  // Quick Verification Search
   const factionSearchInput = document.getElementById('factionSearchInput');
   const verificationResults = document.getElementById('verificationResults');
 
@@ -1975,7 +1941,7 @@
       const query = e.target.value.toLowerCase().trim();
 
       if (query === '') {
-        verificationResults.innerHTML = '<p class="verification-hint">Введіть нік гравця для пошуку</p>';
+        verificationResults.innerHTML = '<p class="verification-hint">Введіть нік гравця для швидкої перевірки</p>';
         return;
       }
 
@@ -1997,8 +1963,11 @@
         if (player.role) extra += `<div class="player-role">${player.role}</div>`;
         if (player.note) extra += `<div class="player-note">${player.note}</div>`;
 
+        const avatar = player.image ? `<img src="${player.image}" class="member-avatar" style="margin-bottom:8px;" onerror="this.style.display='none'"/>` : '';
+
         return `
           <div class="player-card">
+            ${avatar}
             <div class="player-nickname">${player.nickname}</div>
             ${extra}
             <div class="player-factions">${badges}</div>
@@ -2011,3 +1980,4 @@
 
 </body>
 </html>
+```
