@@ -95,6 +95,7 @@
     width: calc(100% - 60px);
     z-index: 10;
     box-shadow: 0 0 20px rgba(255, 107, 26, 0.25);
+    gap: 16px;
   }
 
   .nav-inner-left {
@@ -136,11 +137,37 @@
 
   .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 14px;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  /* Акуратна зменшена кнопка ГРАТИ */
+  /* Кнопка Зворотній зв'язок */
+  .nav-link.feedback-btn {
+    background: rgba(20, 14, 10, 0.6);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1.5px solid #ff6b1a;
+    box-shadow: 0 0 12px rgba(255, 107, 26, 0.25);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-link.feedback-btn:hover {
+    background: #ff6b1a;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 107, 26, 0.6);
+  }
+
+  /* Кнопка ГРАТИ */
   .nav-link.play-btn {
     background: linear-gradient(135deg, #ff6b1a 0%, #ff4500 100%);
     color: #fff;
@@ -603,6 +630,10 @@
     padding: 20px;
   }
 
+  .modal-overlay.active .modal-content {
+    transform: scale(1);
+  }
+
   .modal-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -620,10 +651,6 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 107, 26, 0.3);
     transform: scale(0.9);
     transition: transform 0.3s ease;
-  }
-
-  .modal-overlay.active .modal-content {
-    transform: scale(1);
   }
 
   .modal-header {
@@ -1085,6 +1112,7 @@
   </div>
 
   <div class="nav-links">
+    <a href="mailto:legacy.rp.ukraine@gmail.com" class="nav-link feedback-btn">✉️ ЗВОРОТНІЙ ЗВ'ЯЗОК</a>
     <a href="https://www.roblox.com/share?v=v2&code=5ihdm3h6vetvsb" target="_blank" class="nav-link play-btn">▶ ГРАТИ</a>
   </div>
 </nav>
@@ -1825,7 +1853,7 @@
       fullContent: `
         <div class="faction-desc-box">
           Відділ Внутрішньої Безпеки (ВВБ) — спеціальний підрозділ, який контролює діяльність співробітників державних фракцій та стежить за дотриманням ними законів, внутрішніх правил і службових протоколів.<br><br>
-          ВВБ частково виконує функції ДБР, зокрема займається виявленням, документуванням та розслідуванням порушень, скоєних працівниками державних структур.
+          ВВБ частково виконує функції ДБР, зокрема займається виявленням, документуванням та розслідуванием порушень, скоєних працівниками державних структур.
         </div>
         <div class="faction-block">
           <strong>Основні завдання:</strong>
